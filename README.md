@@ -1,4 +1,4 @@
-Python-based solutions to the Avent of Code 2021
+Python-based solutions to the Advent of Code 2021
 
 # Preface
 
