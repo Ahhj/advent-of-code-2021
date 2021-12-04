@@ -1,4 +1,3 @@
-from collections import OrderedDict
 from copy import deepcopy
 import functools
 import itertools
@@ -6,26 +5,14 @@ import itertools
 from solutions.day2.common import Direction, Coordinates
 
 
-def run_calculations(vectors):
-    # Copy consumables
-    vectors_a, vectors_b = itertools.tee(vectors)
-
-    # Answers need to be ordered!
-    answers = OrderedDict()
-    answers["a"] = calc_answer_a(vectors_a)
-    answers["b"] = calc_answer_b(vectors_b)
-
-    return answers
-
-
-def calc_answer_a(vectors):
+def calc_a(vectors):
     initial_coords = Coordinates()
     final_coords = functools.reduce(update_position_a, vectors, initial_coords)
     answer_a = final_coords.depth * final_coords.horizontal
     return answer_a
 
 
-def calc_answer_b(vectors):
+def calc_b(vectors):
     initial_coords = Coordinates()
     final_coords = functools.reduce(update_position_b, vectors, initial_coords)
     answer_b = final_coords.depth * final_coords.horizontal

@@ -1,29 +1,16 @@
-from collections import OrderedDict
 import functools
 import itertools
 import operator as op
 
 
-def run_calculations(data):
-    # Copy consumables
-    data_a, data_b = itertools.tee(data)
-
-    # Answers need to be ordered!
-    answers = OrderedDict()
-    answers["a"] = calc_answer_a(data_a)
-    answers["b"] = calc_answer_b(data_b)
-
-    return answers
-
-
-def calc_answer_a(x):
+def calc_a(x):
     """How many times does x increase?"""
     did_increase = where_increases(x)
     answer_a = sum(did_increase)
     return answer_a
 
 
-def calc_answer_b(x):
+def calc_b(x):
     """
     How many times does the rolling sum over
     3 values increase?
