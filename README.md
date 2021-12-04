@@ -1,5 +1,7 @@
 Python-based solutions to the Advent of Code 2021
 
+To participate, head over to https://adventofcode.com
+
 # Preface
 
 My aim is to complete as many of the problems as possible using only built-in python packages 🤓
