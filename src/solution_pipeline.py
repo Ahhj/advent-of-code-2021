@@ -14,14 +14,17 @@ class SolutionPipeline:
         self._calc_a = calc_a
         self._calc_b = calc_b
 
+        self.raw_data = None
+        self.answers = None
+
     def create(self):
         download_data(year=self.year, day=self.day)
+        self.raw_data = read_data(year=self.year, day=self.day)
 
     def run(self):
-        raw_data = read_data(year=self.year, day=self.day)
-        data = self._preprocess(raw_data)
-        answers = self._run_calculations(data)
-        submit_answers(self.year, self.day, answers)
+        data = self._preprocess(self.raw_data)
+        self.answers = self._run_calculations(data)
+        submit_answers(self.year, self.day, self.answers)
 
     def _run_calculations(self, data):
         # Copy consumables
@@ -31,4 +34,5 @@ class SolutionPipeline:
         answers = OrderedDict()
         answers["a"] = self._calc_a(data_a)
         answers["b"] = self._calc_b(data_b)
+
         return answers
