@@ -2,6 +2,14 @@ import itertools
 from collections import Counter
 
 
+def run_calculations(data):
+    data = list(data)
+    answers = {}
+    answers["a"] = calc_a(data)
+    answers["b"] = calc_b(data)
+    return answers
+
+
 def calc_a(data):
     # Transpose the data
     columns = zip(*data)

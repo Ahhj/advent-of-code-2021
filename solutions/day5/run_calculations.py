@@ -1,6 +1,13 @@
 import itertools
-import functools
 from collections import defaultdict
+
+
+def run_calculations(data):
+    data = list(data)
+    answers = {}
+    answers["a"] = calc_a(data)
+    answers["b"] = calc_b(data)
+    return answers
 
 
 def calc_a(endpoints):

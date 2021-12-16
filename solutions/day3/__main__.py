@@ -1,11 +1,12 @@
-from src.solution_pipeline import SolutionPipeline
+from common.solution_pipeline import SolutionPipeline
 
 from .preprocess import preprocess
-from .run_calculations import calc_a, calc_b
+from .run_calculations import run_calculations
 
 YEAR = 2021
 DAY = 3
 
-pipeline = SolutionPipeline(YEAR, DAY, preprocess, calc_a, calc_b)
+pipeline = SolutionPipeline(YEAR, DAY, preprocess, run_calculations)
 pipeline.create()
 pipeline.run()
+pipeline.submit()

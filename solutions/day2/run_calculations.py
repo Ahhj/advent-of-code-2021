@@ -1,8 +1,15 @@
 from copy import deepcopy
 import functools
-import itertools
 
 from solutions.day2.common import Direction, Coordinates
+
+
+def run_calculations(data):
+    data = list(data)
+    answers = {}
+    answers["a"] = calc_a(data)
+    answers["b"] = calc_b(data)
+    return answers
 
 
 def calc_a(vectors):

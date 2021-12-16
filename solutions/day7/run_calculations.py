@@ -2,6 +2,14 @@ import random
 from collections import Counter
 
 
+def run_calculations(data):
+    data = list(data)
+    answers = {}
+    answers["a"] = calc_a(data)
+    answers["b"] = calc_b(data)
+    return answers
+
+
 def calc_a(x_initial):
     x_initial = list(x_initial)
     x_align = find_alignment_position(x_initial, fuel_consumption_a)
