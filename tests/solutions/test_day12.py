@@ -1,17 +1,17 @@
 import pytest
-from aoc2021.solutions.day11.preprocess import preprocess
-from aoc2021.solutions.day11.solve import solve_a, solve_b
+from aoc2021.solutions.day12.preprocess import preprocess
+from aoc2021.solutions.day12.solve import solve_a, solve_b
 
-EXAMPLE_DATA = """5483143223
-2745854711
-5264556173
-6141336146
-6357385478
-4167524645
-2176841721
-6882881134
-4846848554
-5283751526"""
+EXAMPLE_DATA = """dc-end
+HN-start
+start-kj
+dc-start
+dc-HN
+LN-dc
+HN-end
+kj-sa
+kj-HN
+kj-dc"""
 
 
 @pytest.fixture()
@@ -20,12 +20,12 @@ def example_data():
 
 
 def test_solve_a(example_data):
-    expected_result = 1656
+    expected_result = 19
     actual_result = solve_a(example_data)
     assert expected_result == actual_result
 
 
 def test_solve_b(example_data):
-    expected_result = 195
+    expected_result = 103
     actual_result = solve_b(example_data)
     assert expected_result == actual_result
