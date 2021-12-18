@@ -27,5 +27,7 @@ class SolutionPipeline:
         self.answers = self._solve(data)
 
     def submit(self):
-        submit(self.answers["a"], part="a", year=self.year, day=self.day)
-        submit(self.answers["b"], part="b", year=self.year, day=self.day)
+        if "a" in self.answers:
+            submit(self.answers["a"], part="a", year=self.year, day=self.day)
+        if "b" in self.answers:
+            submit(self.answers["b"], part="b", year=self.year, day=self.day)
