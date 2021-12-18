@@ -2,22 +2,22 @@ import itertools
 import operator as op
 
 
-def run_calculations(data):
+def solve(data):
     data = list(data)
     answers = {}
-    answers["a"] = calc_a(data)
-    answers["b"] = calc_b(data)
+    answers["a"] = solve_a(data)
+    answers["b"] = solve_b(data)
     return answers
 
 
-def calc_a(x):
+def solve_a(x):
     """How many times does x increase?"""
     did_increase = where_increases(x)
     answer_a = sum(did_increase)
     return answer_a
 
 
-def calc_b(x):
+def solve_b(x):
     """
     How many times does the rolling sum over
     3 values increase?

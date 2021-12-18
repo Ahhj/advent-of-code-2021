@@ -6,7 +6,7 @@ To participate, head over to https://adventofcode.com
 
 My aim is to complete as many of the problems as possible using only built-in python packages 🤓
 
-I'm also going to try to avoid stack overflow 😅 - at least outside of the 'how do I do this thing I've done 1000 times before?' questions 🙃
+I'm also going to try to avoid stack overflow as much as possible 😅 (at least outside of the 'how do I do this thing I've done 1000 times before?' questions 🙃)
 
 # Getting started
 
@@ -37,7 +37,7 @@ Also you'll need to point at your data directory in the .env file, with the vari
 To run the solution for day X:
 
 ```
-python -m solutions.dayX
+python -m aoc2021 --day=X
 ```
 
 This will download, ingest and preprocess the data, run the calculations and submit the result! 💪

@@ -2,21 +2,21 @@ import itertools
 from collections import defaultdict
 
 
-def run_calculations(data):
+def solve(data):
     data = list(data)
     answers = {}
-    answers["a"] = calc_a(data)
-    answers["b"] = calc_b(data)
+    answers["a"] = solve_a(data)
+    answers["b"] = solve_b(data)
     return answers
 
 
-def calc_a(endpoints):
+def solve_a(endpoints):
     overlap_counts = count_line_overlaps(endpoints)
     answer_a = len(list(overlap_counts))
     return answer_a
 
 
-def calc_b(endpoints):
+def solve_b(endpoints):
     overlap_counts = count_line_overlaps(endpoints, include_diagonal=True)
     answer_b = len(list(overlap_counts))
     return answer_b

@@ -2,22 +2,22 @@ import random
 from collections import Counter
 
 
-def run_calculations(data):
+def solve(data):
     data = list(data)
     answers = {}
-    answers["a"] = calc_a(data)
-    answers["b"] = calc_b(data)
+    answers["a"] = solve_a(data)
+    answers["b"] = solve_b(data)
     return answers
 
 
-def calc_a(x_initial):
+def solve_a(x_initial):
     x_initial = list(x_initial)
     x_align = find_alignment_position(x_initial, fuel_consumption_a)
     answer_a = fuel_consumption_a(x_initial, x_align)
     return answer_a
 
 
-def calc_b(x_initial):
+def solve_b(x_initial):
     x_initial = list(x_initial)
     x_align = find_alignment_position(x_initial, fuel_consumption_b)
     answer_b = fuel_consumption_b(x_initial, x_align)

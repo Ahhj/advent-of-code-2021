@@ -1,25 +1,25 @@
 from copy import deepcopy
 import functools
 
-from solutions.day2.common import Direction, Coordinates
+from .common import Direction, Coordinates
 
 
-def run_calculations(data):
+def solve(data):
     data = list(data)
     answers = {}
-    answers["a"] = calc_a(data)
-    answers["b"] = calc_b(data)
+    answers["a"] = solve_a(data)
+    answers["b"] = solve_b(data)
     return answers
 
 
-def calc_a(vectors):
+def solve_a(vectors):
     initial_coords = Coordinates()
     final_coords = functools.reduce(update_position_a, vectors, initial_coords)
     answer_a = final_coords.depth * final_coords.horizontal
     return answer_a
 
 
-def calc_b(vectors):
+def solve_b(vectors):
     initial_coords = Coordinates()
     final_coords = functools.reduce(update_position_b, vectors, initial_coords)
     answer_b = final_coords.depth * final_coords.horizontal

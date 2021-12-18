@@ -1,20 +1,20 @@
 from collections import defaultdict
 
 
-def run_calculations(data):
+def solve(data):
     data = list(data)
     answers = {}
-    answers["a"] = calc_a(data)
-    answers["b"] = calc_b(data)
+    answers["a"] = solve_a(data)
+    answers["b"] = solve_b(data)
     return answers
 
 
-def calc_a(data):
+def solve_a(data):
     answer_a = population_after_ndays(data, 80)
     return answer_a
 
 
-def calc_b(data):
+def solve_b(data):
     answer_b = population_after_ndays(data, 256)
     return answer_b
 

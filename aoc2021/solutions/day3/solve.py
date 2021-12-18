@@ -2,15 +2,15 @@ import itertools
 from collections import Counter
 
 
-def run_calculations(data):
+def solve(data):
     data = list(data)
     answers = {}
-    answers["a"] = calc_a(data)
-    answers["b"] = calc_b(data)
+    answers["a"] = solve_a(data)
+    answers["b"] = solve_b(data)
     return answers
 
 
-def calc_a(data):
+def solve_a(data):
     # Transpose the data
     columns = zip(*data)
 
@@ -27,7 +27,7 @@ def calc_a(data):
     return answer_a
 
 
-def calc_b(data):
+def solve_b(data):
     data_oxygen, data_co2 = itertools.tee(data)
 
     oxygen_bin = bit_criteria_filter(data_oxygen)

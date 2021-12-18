@@ -4,20 +4,20 @@ import operator as op
 from collections import defaultdict
 
 
-def run_calculations(data):
+def solve(data):
     data = list(data)
     answers = {}
-    answers["a"] = calc_a(data)
-    answers["b"] = calc_b(data)
+    answers["a"] = solve_a(data)
+    answers["b"] = solve_b(data)
     return answers
 
 
-def calc_a(data):
+def solve_a(data):
     answer_a = get_score_by_board_rank(*data, 0)
     return answer_a
 
 
-def calc_b(data):
+def solve_b(data):
     answer_b = get_score_by_board_rank(*data, -1)
     return answer_b
 

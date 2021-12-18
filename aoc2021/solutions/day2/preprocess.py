@@ -1,5 +1,5 @@
 import itertools
-from solutions.day2.common import *
+from .common import *
 
 
 def preprocess(raw_data):

@@ -1,18 +1,20 @@
+import importlib
 from dotenv import load_dotenv
 from aocd import submit
 
-from common.read_data import read_data
-from common.download_data import download_data
+from .read_data import read_data
+from .download_data import download_data
 
 load_dotenv()
 
 
 class SolutionPipeline:
-    def __init__(self, year, day, preprocess, run_calculations):
+    def __init__(self, year, day):
         self.year = year
         self.day = day
-        self._preprocess = preprocess
-        self._run_calculations = run_calculations
+        solutions = importlib.import_module(f"aoc2021.solutions.day{day}")
+        self._preprocess = solutions.preprocess
+        self._solve = solutions.solve
         self.raw_data = None
         self.answers = None
 
@@ -22,7 +24,7 @@ class SolutionPipeline:
 
     def run(self):
         data = self._preprocess(self.raw_data)
-        self.answers = self._run_calculations(data)
+        self.answers = self._solve(data)
 
     def submit(self):
         submit(self.answers["a"], part="a", year=self.year, day=self.day)
