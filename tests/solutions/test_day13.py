@@ -1,7 +1,6 @@
-from re import T
 import pytest
 from aoc2021.solutions.day13.preprocess import preprocess
-from aoc2021.solutions.day13.solve import get_folded_coords, solve_a  # , solve_b
+from aoc2021.solutions.day13.solve import solve_a  # , solve_b
 
 EXAMPLE_DATA = """6,10
 0,14
